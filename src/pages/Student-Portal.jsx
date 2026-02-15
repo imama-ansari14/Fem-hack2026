@@ -1,4 +1,4 @@
-import StudentNavbar from "../components/Navbar";
+import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import { useAuth } from "../context/AuthContext";
@@ -8,7 +8,7 @@ export default function StudentPortal() {
 
   return (
     <>
-      <StudentNavbar user={user} />
+      <Navbar user={user} />
       <Hero />
       <Footer />
     </>
