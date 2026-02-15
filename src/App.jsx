@@ -2,23 +2,34 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import StudentPortal from "./pages/Student-Portal";
-// import LostFound from "./pages/LostFound";
-// import Complaints from "./pages/Complaints";
-// import Volunteering from "./pages/Volunteering";
+import AdminDashboard from "./pages/AdminDashboard";
+
+// Admin pages
+import UserPage from "./pages/admin/UserPage";
+// import Complaints from "./pages/admin/ComplaintsPage";
+// import LostFound from "./pages/admin/LostFoundPage";
+// import Volunteers from "./pages/admin/VolunteersPage";
 
 function App() {
   return (
     <Router>
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/student-portal" element={<StudentPortal />} />
 
-        {/* Student Routes */}
-        <Route path="/Student-Portal" element={<StudentPortal />} />
-        {/* <Route path="/lost-found" element={<LostFound />} />
-        <Route path="/complaints" element={<Complaints />} />
-        <Route path="/volunteering" element={<Volunteering />} /> */}
+        {/* Admin Dashboard with Nested Routes */}
+        <Route path="/admin-dashboard" element={<AdminDashboard />}>
+          <Route path="users" element={<UserPage />} />
+          {/* <Route path="complaints" element={<Complaints />} />
+          <Route path="lost-found" element={<LostFound />} />
+          <Route path="volunteers" element={<Volunteers />} /> */}
+        </Route>
+
+        {/* Fallback Route */}
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
   );

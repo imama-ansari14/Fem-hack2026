@@ -10,6 +10,10 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // Hardcoded Admin Credentials
+  const ADMIN_EMAIL = "admin@university.edu";
+  const ADMIN_PASSWORD = "Admin1234"; // strong password
+
   // Premium SweetAlert Configuration
   const Toast = Swal.mixin({
     customClass: {
@@ -27,6 +31,20 @@ const Login = () => {
     setLoading(true);
 
     try {
+      // Admin check first
+      if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+        Toast.fire({
+          icon: "success",
+          title: "Welcome Admin",
+          text: "Access granted as Admin",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+        navigate("/admin-dashboard");
+        return; // Stop further execution
+      }
+
+      // Normal Supabase authentication for other users
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -44,9 +62,7 @@ const Login = () => {
         showConfirmButton: false,
       });
 
-      // Role-based navigation
-      if (userRole === "admin") navigate("/admin-dashboard");
-      else navigate("/Student-Portal");
+      navigate("/Student-Portal");
     } catch (error) {
       Toast.fire({
         icon: "error",
