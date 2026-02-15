@@ -1,8 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 border-t border-white/10 mt-20">
+    <footer className="bg-slate-900 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10 text-slate-400">
-
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
@@ -23,9 +22,13 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm">
-            <li className="hover:text-indigo-400 cursor-pointer">Lost & Found</li>
+            <li className="hover:text-indigo-400 cursor-pointer">
+              Lost & Found
+            </li>
             <li className="hover:text-indigo-400 cursor-pointer">Complaints</li>
-            <li className="hover:text-indigo-400 cursor-pointer">Volunteering</li>
+            <li className="hover:text-indigo-400 cursor-pointer">
+              Volunteering
+            </li>
             <li className="hover:text-indigo-400 cursor-pointer">Dashboard</li>
           </ul>
         </div>

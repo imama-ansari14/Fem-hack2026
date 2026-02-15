@@ -5,10 +5,9 @@ import StudentPortal from "./pages/Student-Portal";
 import AdminDashboard from "./pages/AdminDashboard";
 
 // Admin pages
-import UserPage from "./pages/admin/UserPage";
-// import Complaints from "./pages/admin/ComplaintsPage";
-// import LostFound from "./pages/admin/LostFoundPage";
-// import Volunteers from "./pages/admin/VolunteersPage";
+import Complaints from "./pages/admin/ComplaintsPage";
+import LostFound from "./pages/admin/LostFoundPage";
+import Volunteers from "./pages/admin/VolunteersPage";
 
 function App() {
   return (
@@ -22,10 +21,9 @@ function App() {
 
         {/* Admin Dashboard with Nested Routes */}
         <Route path="/admin-dashboard" element={<AdminDashboard />}>
-          <Route path="users" element={<UserPage />} />
-          {/* <Route path="complaints" element={<Complaints />} />
+          <Route path="complaints" element={<Complaints />} />
           <Route path="lost-found" element={<LostFound />} />
-          <Route path="volunteers" element={<Volunteers />} /> */}
+          <Route path="volunteers" element={<Volunteers />} />
         </Route>
 
         {/* Fallback Route */}

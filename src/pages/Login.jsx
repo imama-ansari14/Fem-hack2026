@@ -11,8 +11,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   // Hardcoded Admin Credentials
-  const ADMIN_EMAIL = "admin@university.edu";
-  const ADMIN_PASSWORD = "Admin1234"; // strong password
+  const ADMIN_EMAIL = "admin@gmail.com";
+  const ADMIN_PASSWORD = "123456"; // strong password
 
   // Premium SweetAlert Configuration
   const Toast = Swal.mixin({
